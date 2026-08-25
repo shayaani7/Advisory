@@ -1,0 +1,121 @@
+.bk-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-black);
+  min-height: 56vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 160px 0 88px;
+  border-radius: 0 0 56px 56px;
+}
+
+.bk-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.bk-hero__noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.bk-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 6, 8, 0.45) 0%,
+    rgba(6, 6, 8, 0.62) 55%,
+    rgba(6, 6, 8, 0.78) 100%
+  );
+  z-index: 1;
+}
+
+.bk-hero__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.bk-hero__card {
+  max-width: 720px;
+  width: 100%;
+  padding: 40px 48px 44px;
+  border-radius: 24px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+}
+
+.bk-hero__eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin-bottom: 20px;
+}
+
+.bk-hero__heading {
+  display: inline-block;
+  font-family: 'Space Grotesk', var(--font-heading);
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+  padding: 16px 28px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary) 70%);
+  box-shadow: 0 12px 32px rgba(79, 63, 240, 0.35);
+}
+
+.bk-hero__sub {
+  font-size: 15px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+@media (max-width: 960px) {
+  .bk-hero {
+    padding: 140px 0 72px;
+    border-radius: 0 0 36px 36px;
+  }
+
+  .bk-hero__card {
+    padding: 32px 28px 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .bk-hero {
+    padding: 120px 0 60px;
+    min-height: 48vh;
+  }
+
+  .bk-hero__heading {
+    padding: 14px 20px;
+    font-size: 24px;
+  }
+}

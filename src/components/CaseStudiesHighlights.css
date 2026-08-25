@@ -1,0 +1,128 @@
+.cs-highlights {
+  background: #f8f8f8;
+  padding: 48px 0 80px;
+}
+
+.cs-highlights__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cs-highlights__header {
+  text-align: center;
+  margin-bottom: 64px;
+  max-width: 640px;
+}
+
+.cs-highlights__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-heading-dark);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cs-highlights__sub {
+  font-size: 15px;
+  color: var(--color-body-dark);
+  line-height: 1.7;
+}
+
+.cs-highlights__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  width: 100%;
+}
+
+.cs-highlights__grid .cs-card:last-child {
+  grid-column: 1 / -1;
+  max-width: calc(50% - 14px);
+  justify-self: center;
+}
+
+.cs-card {
+  align-self: stretch;
+  grid-row: span 1;
+  grid-column: span 1;
+  justify-self: stretch;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.142px;
+  border: 0.571px solid rgba(218, 197, 167, 0.15);
+  background: #fff;
+  box-shadow: 0 4px 8.4px 0 rgba(0, 0, 0, 0.25);
+  padding: 28px 28px 32px;
+  box-sizing: border-box;
+}
+
+.cs-card__sector {
+  display: block;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #171717;
+  margin-bottom: 8px;
+}
+
+.cs-card__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 500;
+  color: #171717;
+  line-height: 1.25;
+  margin: 0 0 20px;
+}
+
+.cs-card__img-wrap {
+  width: 100%;
+  margin-bottom: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cs-card__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.cs-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.cs-card__desc {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #4a4a56;
+}
+
+@media (max-width: 900px) {
+  .cs-highlights__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-highlights__grid .cs-card:last-child {
+    grid-column: auto;
+    max-width: 100%;
+  }
+
+  .cs-card {
+    max-width: 100%;
+  }
+}

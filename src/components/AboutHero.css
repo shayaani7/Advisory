@@ -1,0 +1,216 @@
+.about-hero {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1930px;
+  height: 1148px;
+  max-height: none;
+  aspect-ratio: 116 / 69;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 160px 0 100px;
+  border-radius: 0 0 180px 180px;
+  background: #060608;
+  text-align: center;
+}
+
+.about-hero__dot-bg {
+  position: absolute;
+  inset: 0;
+  background-color: #060608;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.about-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 6, 8, 0.55) 0%,
+    rgba(6, 6, 8, 0.72) 100%
+  );
+  z-index: 2;
+  border-radius: inherit;
+}
+
+.about-hero__explore-badge {
+  position: absolute;
+  top: 140px;
+  right: 120px;
+  z-index: 3;
+  width: 134px;
+  height: 134px;
+  border-radius: 50%;
+  background: #35303f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.about-hero__explore-ring {
+  position: absolute;
+  inset: 0;
+  animation: about-spin-slow 18s linear infinite;
+}
+
+.about-hero__explore-ring svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.about-hero__explore-ring text {
+  fill: #fff;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 8.2px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.about-hero__explore-icon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.about-hero__explore-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes about-spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.about-hero__inner {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.about-hero__eyebrow {
+  width: 659px;
+  max-width: 100%;
+  color: #e2f96d;
+  text-align: center;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 31px;
+  letter-spacing: 2.678px;
+  text-transform: uppercase;
+  margin-top: 28px;
+}
+
+.about-hero__heading {
+  width: 1434px;
+  max-width: 100%;
+  color: #fff;
+  text-align: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 104px;
+  letter-spacing: -1.92px;
+}
+
+.about-hero__heading-keep {
+  white-space: nowrap;
+}
+
+@media (max-width: 1930px) {
+  .about-hero {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 1480px) {
+  .about-hero__heading {
+    font-size: clamp(42px, 6.5vw, 96px);
+    line-height: 1.083;
+    letter-spacing: clamp(-0.84px, -0.02em, -1.92px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .about-hero {
+    border-radius: 0 0 100px 100px;
+    padding: 140px 0 90px;
+  }
+}
+
+@media (max-width: 720px) {
+  .about-hero {
+    padding: 140px 0 80px;
+    border-radius: 0 0 48px 48px;
+    aspect-ratio: 116 / 69;
+    min-height: 420px;
+  }
+
+  .about-hero__heading {
+    font-size: clamp(32px, 8vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.72px;
+  }
+
+  .about-hero__explore-badge {
+    width: 96px;
+    height: 96px;
+    top: 78px;
+    right: 18px;
+  }
+
+  .about-hero__explore-ring text {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+  }
+
+  .about-hero__explore-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    min-height: 360px;
+    border-radius: 0 0 36px 36px;
+    aspect-ratio: auto;
+  }
+}

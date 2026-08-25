@@ -1,0 +1,226 @@
+:root {
+  --color-black: #060608;
+  --color-black-soft: #0a0a0d;
+  --color-white: #ffffff;
+  --color-ink: #0a0a0f;
+  --color-muted: #9a9aa5;
+  --color-muted-dark: #6f6f7a;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-primary: #4f3ff0;
+  --color-primary-light: #6e5bff;
+  --color-gold: #d6a13c;
+  --color-gold-light: #f3cf6b;
+
+  --color-surface: #f4f4f7;
+  --color-surface-alt: #ececf1;
+  --color-heading-dark: #0b0b12;
+  --color-body-dark: #6a6a76;
+  --color-card-border: rgba(10, 10, 20, 0.07);
+
+  --font-heading: 'Sora', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --container-width: 1320px;
+
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-surface);
+  color: var(--color-white);
+  line-height: 1.5;
+}
+
+#root {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media (max-width: 720px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 12px 22px;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn--ghost {
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.btn--primary {
+  color: var(--color-white);
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary) 70%);
+  box-shadow: 0 12px 28px -8px rgba(79, 63, 240, 0.65);
+  padding: 13px 8px 13px 24px;
+}
+
+.btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px -8px rgba(79, 63, 240, 0.75);
+}
+
+.btn--primary .btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.btn--primary .btn__icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.btn--primary .btn__icon--play {
+  background: transparent;
+  width: 32px;
+  height: 32px;
+}
+
+.btn--primary .btn__icon--play img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.btn--dark {
+  color: var(--color-white);
+  background: var(--color-ink);
+}
+
+.btn--dark:hover {
+  background: #17171e;
+}
+
+/* Shared badge / highlight utilities used across marketing sections */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary) 70%);
+  color: var(--color-white);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.highlight {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 16px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary) 70%);
+  color: var(--color-white);
+}
+
+.sparkle {
+  display: inline-flex;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.sparkle svg {
+  width: 16px;
+  height: 16px;
+}

@@ -1,0 +1,142 @@
+.barriers {
+  background: var(--color-surface);
+  padding: 24px 0 120px;
+}
+
+.barriers__heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(38px, 4.6vw, 58px);
+  line-height: 1.05;
+  color: var(--color-heading-dark);
+  margin-bottom: 64px;
+  text-align: center;
+  transform: translateX(-170px);
+}
+
+.barriers__highlight-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.barriers__sparkle {
+  position: absolute;
+  top: -16px;
+  right: -18px;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.barriers__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.barrier-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 264px;
+  padding-bottom: 20px;
+  border-radius: 17.073px;
+  border: 1.423px solid rgba(10, 22, 40, 0.18);
+  background: #fff;
+  box-shadow: 0 14.228px 42.684px 0 rgba(10, 22, 40, 0.08);
+  overflow: hidden;
+}
+
+.barrier-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  height: 62px;
+  padding: 0 22px 0 24px;
+  background: #000;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.barrier-card__title {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: #fff;
+  font-family: 'Space Grotesk', var(--font-heading);
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.barrier-card__title--long {
+  font-size: 21px;
+}
+
+.barrier-card__number {
+  flex: 0 0 auto;
+  font-family: var(--font-heading);
+  color: rgba(255, 255, 255, 0.58);
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.barrier-card__body {
+  width: 100%;
+  padding: 20px 24px 0;
+}
+
+.barrier-card__body p {
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: 0;
+  color: #36405a;
+}
+
+@media (max-width: 900px) {
+  .barriers__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .barrier-card {
+    width: 100%;
+    min-height: 0;
+    height: auto;
+  }
+
+  .barrier-card__head {
+    height: auto;
+    min-height: 62px;
+    padding: 14px 18px 13px;
+  }
+
+  .barrier-card__title {
+    font-size: 22px;
+  }
+
+  .barrier-card__title--long {
+    font-size: 18px;
+  }
+
+  .barrier-card__number {
+    font-size: 30px;
+  }
+
+  .barrier-card__body {
+    padding: 18px 18px 0;
+  }
+
+  .barrier-card__body p {
+    font-size: 14px;
+  }
+}

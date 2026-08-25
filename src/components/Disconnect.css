@@ -1,0 +1,353 @@
+.disconnect {
+  position: relative;
+  z-index: 2;
+  background: var(--color-surface);
+  padding: 88px 0 16px;
+  overflow: visible;
+}
+
+.disconnect__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px 110px;
+  align-items: start;
+  overflow: visible;
+}
+
+.disconnect__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+}
+
+.disconnect__heading {
+  width: min(100%, 640px);
+  max-width: 640px;
+  color: #000;
+  font-family: 'Space Grotesk', var(--font-heading);
+  font-size: 58px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -1.1px;
+}
+
+.disconnect__text {
+  width: min(100%, 573px);
+  height: 113.423px;
+  color: #000;
+  font-family: 'Space Grotesk', var(--font-heading);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+  max-width: 573px;
+}
+
+.disconnect__cta {
+  margin-top: 4px;
+  padding: 10px 6px 10px 20px;
+  font-size: 13.5px;
+  gap: 8px;
+}
+
+.disconnect__cta .btn__icon {
+  width: 26px;
+  height: 26px;
+}
+
+.disconnect__cta .btn__icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.disconnect__calculator {
+  display: block;
+  width: 250px;
+  margin-top: 8px;
+  margin-left: calc(-1 * ((100vw - min(100vw, var(--container-width))) / 2 + 32px));
+  align-self: flex-start;
+  pointer-events: none;
+  filter: drop-shadow(0 16px 30px rgba(20, 20, 40, 0.14));
+}
+
+.disconnect__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  overflow: visible;
+  padding-left: 36px;
+}
+
+.disconnect__cert {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-right: 8px;
+}
+
+.disconnect__cert img {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.disconnect__cert-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.disconnect__cert-copy strong {
+  color: #000;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.disconnect__cert-copy span {
+  font-size: 14px;
+  color: var(--color-body-dark);
+}
+
+.disconnect__photo-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  padding-bottom: 56px;
+  overflow: visible;
+}
+
+.disconnect__photo {
+  width: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(10, 10, 20, 0.22);
+}
+
+.disconnect__photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.disconnect__tag {
+  position: absolute;
+  left: -170px;
+  top: auto;
+  bottom: 80px;
+  transform: none;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 148px;
+  height: 74px;
+  border-radius: 42px;
+  background: #171717;
+  box-shadow: 0 16px 30px -10px rgba(10, 10, 20, 0.4);
+  pointer-events: none;
+}
+
+.disconnect__tag-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2px;
+}
+
+.disconnect__tag-text strong {
+  color: #fff;
+  text-align: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.disconnect__tag-text small {
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.disconnect__stat {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -40px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 79px;
+  border-radius: 49px;
+  background: #5846fb;
+  box-shadow: 0 16px 30px -10px rgba(88, 70, 251, 0.45);
+}
+
+.disconnect__stat-count {
+  width: 104px;
+  flex-shrink: 0;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 43px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  text-align: right;
+}
+
+.disconnect__stat-label {
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 21.6px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.68;
+  white-space: nowrap;
+}
+
+@media (max-width: 980px) {
+  .disconnect__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .disconnect__stat {
+    width: 100%;
+    height: 70px;
+    gap: 10px;
+  }
+
+  .disconnect__stat-count {
+    width: auto;
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  .disconnect__stat-label {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .disconnect__tag {
+    position: absolute;
+    left: -20px;
+    top: auto;
+    bottom: 40px;
+    transform: none;
+  }
+
+  .disconnect__left {
+    order: 2;
+  }
+
+  .disconnect__calculator {
+    width: 132px;
+    margin-top: 8px;
+    margin-left: -20px;
+  }
+}
+
+@media (max-width: 720px) {
+  .disconnect__calculator {
+    margin-left: -20px;
+  }
+
+  .disconnect__right {
+    order: 1;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .disconnect__cert {
+    margin-right: 0;
+    align-self: flex-end;
+  }
+
+  .disconnect__photo-wrap {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .disconnect {
+    padding: 72px 0 56px;
+  }
+
+  .disconnect__cert img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .disconnect__cert-copy strong {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .disconnect__cert-copy span {
+    font-size: 13px;
+  }
+
+  .disconnect__tag {
+    left: 8px;
+    top: 36px;
+    transform: none;
+    width: 160px;
+    height: 84px;
+    border-radius: 42px;
+  }
+
+  .disconnect__tag-text strong {
+    font-size: 30px;
+    line-height: 22px;
+  }
+
+  .disconnect__tag-text small {
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+  .disconnect__stat {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 72px;
+    padding: 12px 20px;
+    gap: 10px;
+    border-radius: 48px;
+    bottom: -28px;
+  }
+
+  .disconnect__stat-count {
+    width: auto;
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  .disconnect__stat-label {
+    font-size: 16px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+}

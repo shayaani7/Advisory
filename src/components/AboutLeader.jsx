@@ -1,0 +1,70 @@
+import habibPic from '../assets/habibpic.png'
+import './AboutLeader.css'
+
+const CREDENTIALS = [
+  { label: 'AAOIFI-Certified Shariah Advisor', variant: 'outline' },
+  { label: 'Top 1% Global Expert', variant: 'outline' },
+  { label: '8-Year Classical Shariah Degree', variant: 'outline' },
+  { label: "Master's in Arabic", variant: 'outline' },
+  { label: 'Certified in Entrepreneurship', variant: 'outline' },
+  { label: '15+ Years Experience', variant: 'outline' },
+  { label: '200+ Clients Advised', variant: 'outline' },
+  { label: 'MBA/MS in Islamic Finance', variant: 'outline' },
+]
+
+function AboutLeader() {
+  return (
+    <section className="about-leader">
+      <div className="container about-leader__inner">
+        {/* Portrait */}
+        <div className="about-leader__portrait-col">
+          <div className="about-leader__photo-wrap">
+            <img
+              src={habibPic}
+              alt="Habib Ur Rahman Awan – Founder & Principal Director/CEO"
+              className="about-leader__photo"
+            />
+          </div>
+          <div className="about-leader__caption">
+            <span className="about-leader__role">LEADERSHIP</span>
+            <h3 className="about-leader__name">Habib Ur Rahman Awan</h3>
+            <p className="about-leader__title">FOUNDER & PRINCIPAL DIRECTOR/CEO</p>
+          </div>
+        </div>
+
+        {/* Bio */}
+        <div className="about-leader__bio-col">
+          <div className="about-leader__bio-text">
+            <p>
+              An AAOIFI-Certified Shariah Advisor and globally recognized scholar with over 15 years
+              of experience advising 200+ clients.
+            </p>
+            <p>
+              Consistently ranked as a Top 1% Global Expert, Habib possesses a uniquely powerful
+              multi-dimensional background: an 8-Year Classical Shariah Degree paired with a
+              Master&apos;s Degree in Arabic, structurally reinforced by an MBA/MS in Islamic Finance
+              and a Certification in Entrepreneurship.
+            </p>
+            <p>
+              His absolute mission is to provide clear, practical guidance that bridges the gap
+              between classical theology and modern profitability.
+            </p>
+          </div>
+
+          <div className="about-leader__credentials">
+            {CREDENTIALS.map((c) => (
+              <span
+                key={c.label}
+                className={`about-leader__badge about-leader__badge--${c.variant}`}
+              >
+                {c.label}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default AboutLeader
