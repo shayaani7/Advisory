@@ -6,7 +6,7 @@ import AdvisoryFooter from './components/AdvisoryFooter.jsx'
 function BookingPage() {
   return (
     <>
-      <Header />
+      <Header darkText />
       <main>
         <BookingHero />
         <BookingForm />

@@ -36,7 +36,7 @@
 }
 
 .kr-cta__content {
-  max-width: 640px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -46,17 +46,24 @@
 }
 
 .kr-cta__heading {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 35.2px;
+  font-style: normal;
   font-weight: 700;
-  color: var(--color-white);
-  line-height: 1.15;
+  line-height: 45.76px;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .kr-cta__sub {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.7;
+  font-family: Inter, sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  color: #e7ecf4;
+  text-align: center;
   max-width: 500px;
 }
 
@@ -74,4 +81,12 @@
 .kr-cta__btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 768px) {
+  .kr-cta__heading {
+    white-space: normal;
+    font-size: clamp(1.5rem, 5vw, 35.2px);
+    line-height: 1.3;
+  }
 }

@@ -9,11 +9,11 @@ const NAV_LINKS = [
   { label: 'Knowledge & Resources', href: '#contact' },
 ]
 
-function Header() {
+function Header({ darkText = false }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="site-header">
+    <header className={`site-header${darkText ? ' site-header--dark-text' : ''}`}>
       <div className="container site-header__inner">
         <a href="#home" className="site-header__logo">
           ELAF SHARIAH ADVISORY
@@ -23,14 +23,21 @@ function Header() {
           <ul>
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
-                <a href={link.href}>{link.label}</a>
+                <a href={link.href} onClick={() => setOpen(false)}>
+                  {link.label}
+                </a>
               </li>
             ))}
+            <li className="site-header__nav-booking">
+              <a href="#booking" onClick={() => setOpen(false)}>
+                Book Executive Consultation
+              </a>
+            </li>
           </ul>
         </nav>
 
         <div className="site-header__actions">
-          <a href="#contact" className="btn btn--ghost">
+          <a href="#booking" className="btn btn--primary site-header__booking">
             Book Executive Consultation
           </a>
           <button

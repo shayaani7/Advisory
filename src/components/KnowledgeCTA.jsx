@@ -9,11 +9,11 @@ function KnowledgeCTA() {
             Need In-Depth Institutional Advisory?
           </h2>
           <p className="kr-cta__sub">
-            Our team provides confidential, end-to-end advisory for complex Shariah governance,
-            product structuring, and regulatory compliance challenges.
+            For complex corporate engagements, schedule a direct consultation with our
+            Principal Advisor.
           </p>
           <a href="#booking" className="btn kr-cta__btn">
-            Request Proposal
+            Schedule an Executive Consultation
           </a>
         </div>
       </div>

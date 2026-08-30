@@ -14,7 +14,7 @@ function AboutCTA() {
             <br />
             discuss your objectives.
           </p>
-          <a href="#contact" className="about-cta__btn">
+          <a href="#booking" className="about-cta__btn">
             <span className="about-cta__btn-text">Schedule Executive Consultation</span>
           </a>
         </div>

@@ -1,23 +1,17 @@
-import heroPhoto from '../assets/desk.png'
-import noiseTexture from '../assets/Noise.png'
+import heroPhoto from '../assets/bec.png'
 import './BookingHero.css'
 
 function BookingHero() {
   return (
     <section className="bk-hero">
-      <div
-        className="bk-hero__bg"
-        style={{ backgroundImage: `url(${heroPhoto})` }}
+      <img
+        src={heroPhoto}
+        alt=""
+        className="bk-hero__img"
         aria-hidden="true"
-      >
-        <div
-          className="bk-hero__noise"
-          style={{ backgroundImage: `url(${noiseTexture})` }}
-        />
-      </div>
-      <div className="bk-hero__overlay" aria-hidden="true" />
+      />
 
-      <div className="container bk-hero__inner">
+      <div className="bk-hero__inner">
         <div className="bk-hero__card">
           <span className="bk-hero__eyebrow">Contact Us</span>
           <h1 className="bk-hero__heading">

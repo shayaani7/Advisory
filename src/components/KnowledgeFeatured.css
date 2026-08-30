@@ -105,12 +105,13 @@
 }
 
 .kr-feat-item__category {
-  font-family: Inter, system-ui, sans-serif;
-  font-size: 12px;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-style: normal;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  line-height: normal;
+  letter-spacing: 1.054px;
+  color: #fff;
 }
 
 .kr-feat-item__title {
@@ -125,7 +126,7 @@
 .kr-feat-item__stars {
   display: flex;
   gap: 4px;
-  color: #f3cf6b;
+  color: #fecb1c;
 }
 
 .kr-feat-item__stars svg {
@@ -135,10 +136,13 @@
 
 .kr-feat-item__desc {
   margin: 0;
-  font-family: Inter, system-ui, sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.65);
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 1.289px;
+  color: #fff;
   max-width: 620px;
 }
 
