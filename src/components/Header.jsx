@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Header.css'
 
 const NAV_LINKS = [
@@ -9,8 +9,21 @@ const NAV_LINKS = [
   { label: 'Knowledge & Resources', href: '#contact' },
 ]
 
+function getActiveHref() {
+  const hash = window.location.hash
+  if (!hash || hash === '#' || hash === '#home') return '#home'
+  return hash
+}
+
 function Header({ darkText = false }) {
   const [open, setOpen] = useState(false)
+  const [activeHref, setActiveHref] = useState(() => getActiveHref())
+
+  useEffect(() => {
+    const onHashChange = () => setActiveHref(getActiveHref())
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [])
 
   return (
     <header className={`site-header${darkText ? ' site-header--dark-text' : ''}`}>
@@ -21,15 +34,28 @@ function Header({ darkText = false }) {
 
         <nav className={`site-header__nav ${open ? 'is-open' : ''}`}>
           <ul>
-            {NAV_LINKS.map((link) => (
-              <li key={link.label}>
-                <a href={link.href} onClick={() => setOpen(false)}>
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = activeHref === link.href
+              return (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className={isActive ? 'is-active' : undefined}
+                    aria-current={isActive ? 'page' : undefined}
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              )
+            })}
             <li className="site-header__nav-booking">
-              <a href="#booking" onClick={() => setOpen(false)}>
+              <a
+                href="#booking"
+                className={activeHref === '#booking' ? 'is-active' : undefined}
+                aria-current={activeHref === '#booking' ? 'page' : undefined}
+                onClick={() => setOpen(false)}
+              >
                 Book Executive Consultation
               </a>
             </li>
