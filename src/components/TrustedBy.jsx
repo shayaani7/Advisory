@@ -15,6 +15,7 @@ import amplifyLogo from '../assets/amplify.png'
 import malcoLogo from '../assets/malco.png'
 import zycusLogo from '../assets/zycus.png'
 import quanLogo from '../assets/quan.png'
+import Reveal from './Reveal.jsx'
 import './TrustedBy.css'
 
 const ROWS = [
@@ -78,10 +79,12 @@ function TrustedBy() {
   return (
     <section className="trusted">
       <div className="container trusted__inner">
-        <h2 className="trusted__heading">
+        <Reveal as="h2" className="trusted__heading" variant="up">
           Trusted by Leading Organizations
-        </h2>
-        <span className="trusted__badge highlight">Worldwide</span>
+        </Reveal>
+        <Reveal as="span" className="trusted__badge highlight" variant="scale" delay={160}>
+          Worldwide
+        </Reveal>
 
         <div className="trusted__marquees">
           {ROWS.map((row, index) => (
@@ -89,9 +92,9 @@ function TrustedBy() {
           ))}
         </div>
 
-        <p className="trusted__regions">
+        <Reveal as="p" className="trusted__regions" variant="fade" delay={80}>
           USA · UK · UAE · KSA · Kuwait · Canada · Australia · Germany · France · MENA Region
-        </p>
+        </Reveal>
       </div>
     </section>
   )

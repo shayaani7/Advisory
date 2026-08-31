@@ -1,6 +1,6 @@
+import { useReady } from '../hooks/useInView'
 import bgDots from '../assets/bg-dots.png'
-import heroNoodle from '../assets/hero-noodle.png'
-import tickBadge from '../assets/tick.png'
+import heroBg from '../assets/newbc.png'
 import playIcon from '../assets/playicon.png'
 import avatarTim from '../assets/timcook.png'
 import avatarBlue from '../assets/girlwithbluebg.png'
@@ -14,17 +14,20 @@ const TRUST_AVATARS = [
 ]
 
 function Hero() {
+  const ready = useReady(60)
+
   return (
-    <section className="hero" id="home">
+    <section className={`hero${ready ? ' is-inview' : ''}`} id="home">
       <div
         className="hero__bg"
+        style={{ backgroundImage: `url(${heroBg})` }}
+        aria-hidden="true"
+      />
+      <div
+        className="hero__dots"
         style={{ backgroundImage: `url(${bgDots})` }}
         aria-hidden="true"
       />
-
-      <div className="hero__noodle" aria-hidden="true">
-        <img src={heroNoodle} alt="" />
-      </div>
 
       <div className="container hero__inner">
         <div className="hero__top">
@@ -40,10 +43,6 @@ function Hero() {
           </div>
 
           <div className="hero__info-col">
-            <div className="hero__seal" aria-hidden="true">
-              <img src={tickBadge} alt="" />
-            </div>
-
             <p className="hero__description">
               <span className="hero__description-line">
                 We design Shariah-compliant financial solutions that combine ethical
@@ -53,7 +52,7 @@ function Hero() {
               </span>
             </p>
 
-            <a href="#contact" className="btn btn--primary hero__cta">
+            <a href="#services" className="btn btn--primary hero__cta">
               Explore Advisory Services
               <span className="btn__icon btn__icon--play">
                 <img src={playIcon} alt="" />

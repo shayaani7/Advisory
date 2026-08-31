@@ -1,9 +1,34 @@
 .about-mission {
+  position: relative;
   background: var(--color-surface);
   padding: 100px 0 90px;
+  overflow: hidden;
+}
+
+.about-mission__asterisk {
+  position: absolute;
+  right: -80px;
+  top: -90px;
+  width: 280px;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(6px);
+  animation: about-mission-spin 28s linear infinite;
+}
+
+@keyframes about-mission-spin {
+  from {
+    transform: rotate(-10deg);
+  }
+  to {
+    transform: rotate(350deg);
+  }
 }
 
 .about-mission__inner {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
@@ -21,10 +46,14 @@
   font-family: var(--font-heading);
   font-size: clamp(26px, 3vw, 42px);
   font-weight: 700;
-  color: var(--color-heading-dark);
+  color: #c9c9ce;
   line-height: 1.2;
   letter-spacing: -0.01em;
   margin: 0;
+}
+
+.about-mission__heading.is-inview {
+  color: var(--color-heading-dark);
 }
 
 .about-mission__para {
@@ -72,10 +101,20 @@
   filter: drop-shadow(0 12px 28px rgba(79, 63, 240, 0.35));
 }
 
+.about-mission__image-wrap.is-inview .about-mission__scale-badge {
+  animation: motion-float 5.5s ease-in-out infinite;
+}
+
 @media (max-width: 900px) {
   .about-mission__inner {
     grid-template-columns: 1fr;
     gap: 48px;
+  }
+
+  .about-mission__asterisk {
+    right: -60px;
+    top: -40px;
+    width: 160px;
   }
 
   .about-mission__scale-badge {
@@ -100,5 +139,17 @@
     left: 0;
     width: 64px;
     height: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-mission__heading,
+  .about-mission__heading.is-inview {
+    color: var(--color-heading-dark);
+  }
+
+  .about-mission__asterisk {
+    animation: none;
+    filter: blur(4px);
   }
 }

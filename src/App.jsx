@@ -38,7 +38,7 @@ function getPage() {
   if (hash === '#services') return 'services'
   if (hash === '#insights') return 'insights'
   if (hash === '#contact') return 'knowledge'
-  if (hash === '#booking') return 'booking'
+  if (hash === '#booking' || hash === '#get-in-touch') return 'booking'
   return 'home'
 }
 

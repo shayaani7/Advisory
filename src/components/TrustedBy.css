@@ -31,6 +31,20 @@
   text-transform: uppercase;
   padding: 6px 20px;
   border-radius: 10px;
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  color: var(--color-heading-dark);
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    filter 0.85s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    background-size 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s,
+    color 0.45s ease 0.2s;
+}
+
+.trusted__badge.is-inview {
+  background-size: 100% 100%;
+  color: #fff;
 }
 
 .trusted__marquees {

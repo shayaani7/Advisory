@@ -1,10 +1,10 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background: var(--color-black);
+  background: #3a3a3a;
   min-height: 100vh;
   padding-top: 120px;
-  padding-bottom: 520px;
+  padding-bottom: 220px;
   border-radius: 0 0 56px 56px;
 }
 
@@ -13,8 +13,19 @@
   inset: 0;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center top;
+  background-position: right bottom;
   z-index: 0;
+}
+
+.hero__dots {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.45;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero__inner {
@@ -52,6 +63,15 @@
   max-width: 100%;
   margin: 0;
   text-align: left;
+  opacity: 0;
+  transform: translate3d(-28px, 18px, 0);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero.is-inview .hero__heading {
+  opacity: 1;
+  transform: none;
 }
 
 @container (max-width: 991px) {
@@ -73,6 +93,15 @@
   font-weight: 700;
   letter-spacing: 0.24em;
   color: rgba(255, 255, 255, 0.85);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.18s,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.18s;
+}
+
+.hero.is-inview .hero__subtitle {
+  opacity: 1;
+  transform: none;
 }
 
 .hero__info-col {
@@ -86,23 +115,6 @@
   min-width: 0;
   width: 100%;
   margin-left: 32px;
-}
-
-.hero__seal {
-  position: absolute;
-  top: -28px;
-  right: 0;
-  width: 80px;
-  height: 80px;
-  z-index: 3;
-  filter: drop-shadow(0 10px 22px rgba(214, 161, 60, 0.45));
-  pointer-events: none;
-}
-
-.hero__seal img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 
 .hero__description {
@@ -120,6 +132,15 @@
   margin-top: 64px;
   margin-left: auto;
   align-self: flex-end;
+  opacity: 0;
+  transform: translate3d(24px, 16px, 0);
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.22s,
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.22s;
+}
+
+.hero.is-inview .hero__description {
+  opacity: 1;
+  transform: none;
 }
 
 .hero__description-line {
@@ -155,6 +176,15 @@
   border: none;
   box-shadow: none;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.38s,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.38s;
+}
+
+.hero.is-inview .hero__cta {
+  opacity: 1;
+  transform: none;
 }
 
 .hero__cta:hover {
@@ -189,6 +219,15 @@
   gap: 14px;
   margin-top: 4px;
   margin-left: 68px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.5s,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.5s;
+}
+
+.hero.is-inview .hero__trust {
+  opacity: 1;
+  transform: none;
 }
 
 .hero__trust-avatars {
@@ -237,31 +276,15 @@
   line-height: normal;
 }
 
-.hero__noodle {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -2px;
-  z-index: 1;
-  line-height: 0;
-  pointer-events: none;
-}
-
-.hero__noodle img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 @media (max-width: 1200px) {
   .hero {
-    padding-bottom: 340px;
+    padding-bottom: 180px;
   }
 }
 
 @media (max-width: 980px) {
   .hero {
-    padding-bottom: 260px;
+    padding-bottom: 140px;
   }
 
   .hero__top {
@@ -278,19 +301,11 @@
     margin-left: 0;
   }
 
-  .hero__seal {
-    top: 0;
-    right: 0;
-    width: 72px;
-    height: 72px;
-  }
-
   .hero__description {
     width: 100%;
     margin-top: 80px;
     margin-left: 0;
     align-self: stretch;
-    padding-right: 80px;
     font-size: clamp(15px, 3.8vw, 20px);
     line-height: 1.5;
   }
@@ -305,7 +320,7 @@
 
 @media (max-width: 720px) {
   .hero {
-    padding-bottom: 220px;
+    padding-bottom: 120px;
   }
 
   .hero__trust-global {
@@ -317,17 +332,27 @@
   }
 }
 
-@media (max-width: 640px) {
-  .hero__seal {
-    width: 56px;
-    height: 56px;
+@media (prefers-reduced-motion: reduce) {
+  .hero__heading,
+  .hero__subtitle,
+  .hero__description,
+  .hero__cta,
+  .hero__trust,
+  .hero.is-inview .hero__heading,
+  .hero.is-inview .hero__subtitle,
+  .hero.is-inview .hero__description,
+  .hero.is-inview .hero__cta,
+  .hero.is-inview .hero__trust {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
 @media (max-width: 520px) {
   .hero {
     padding-top: 108px;
-    padding-bottom: 200px;
+    padding-bottom: 120px;
     border-radius: 0 0 36px 36px;
   }
 
@@ -360,9 +385,5 @@
   .hero__cta .btn__icon--play {
     width: 34px;
     height: 34px;
-  }
-
-  .hero__description {
-    padding-right: 64px;
   }
 }

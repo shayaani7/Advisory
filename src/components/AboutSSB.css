@@ -51,7 +51,7 @@
   flex-direction: column;
 }
 
-.ssb-card:hover {
+.ssb-card.is-inview:hover {
   transform: translateY(-6px);
   box-shadow: 0 24px 56px -16px rgba(79, 63, 240, 0.18);
 }

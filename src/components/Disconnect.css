@@ -26,13 +26,17 @@
 .disconnect__heading {
   width: min(100%, 640px);
   max-width: 640px;
-  color: #000;
+  color: #c9c9ce;
   font-family: 'Space Grotesk', var(--font-heading);
   font-size: 58px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -1.1px;
+}
+
+.disconnect__heading.is-inview {
+  color: #000;
 }
 
 .disconnect__text {
@@ -64,14 +68,23 @@
   height: 12px;
 }
 
-.disconnect__calculator {
+.disconnect__calculator-wrap {
   display: block;
   width: 250px;
   margin-top: 8px;
   margin-left: calc(-1 * ((100vw - min(100vw, var(--container-width))) / 2 + 32px));
   align-self: flex-start;
+}
+
+.disconnect__calculator {
+  display: block;
+  width: 100%;
   pointer-events: none;
   filter: drop-shadow(0 16px 30px rgba(20, 20, 40, 0.14));
+}
+
+.disconnect__calculator-wrap.is-inview .disconnect__calculator {
+  animation: motion-float 5.5s ease-in-out infinite;
 }
 
 .disconnect__right {
@@ -262,7 +275,7 @@
     order: 2;
   }
 
-  .disconnect__calculator {
+  .disconnect__calculator-wrap {
     width: 132px;
     margin-top: 8px;
     margin-left: -20px;
@@ -270,7 +283,7 @@
 }
 
 @media (max-width: 720px) {
-  .disconnect__calculator {
+  .disconnect__calculator-wrap {
     margin-left: -20px;
   }
 
@@ -349,5 +362,12 @@
     font-size: 16px;
     line-height: 1.2;
     white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .disconnect__heading,
+  .disconnect__heading.is-inview {
+    color: #000;
   }
 }

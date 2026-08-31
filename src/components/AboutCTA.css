@@ -70,7 +70,7 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.about-cta__btn:hover {
+.about-cta__btn.is-inview:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(110, 91, 255, 0.35);
 }

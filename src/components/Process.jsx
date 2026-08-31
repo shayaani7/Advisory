@@ -1,4 +1,5 @@
 import crypto3d from '../assets/crypto-3d.png'
+import Reveal from './Reveal.jsx'
 import './Process.css'
 
 const STEPS = [
@@ -39,46 +40,54 @@ function Process() {
     <section className="process" id="process">
       <div className="container process__inner">
         <div className="process__copy">
-          <span className="process__eyebrow">Our Process</span>
-          <h2 className="process__heading">
+          <Reveal as="span" className="process__eyebrow" variant="fade">
+            Our Process
+          </Reveal>
+          <Reveal as="h2" className="process__heading" delay={80}>
             A Framework Built for Clarity and Speed
-          </h2>
-          <p className="process__text">
+          </Reveal>
+          <Reveal as="p" className="process__text" delay={140}>
             Our six-step process ensures your project moves from strategy to
             deployment with precision.
-          </p>
+          </Reveal>
 
-          <div className="process__actions">
-            <a href="#booking" className="btn btn--primary process__btn">
+          <Reveal className="process__actions" delay={200}>
+            <a href="#get-in-touch" className="btn btn--primary process__btn">
               Get in Contact
             </a>
             <a href="#insights" className="process__link">
               Case Studies
             </a>
-          </div>
+          </Reveal>
 
-          <img
-            className="process__graphic"
-            src={crypto3d}
-            alt=""
-            aria-hidden="true"
-          />
+          <Reveal variant="left" delay={280} className="process__graphic-wrap">
+            <img
+              className="process__graphic"
+              src={crypto3d}
+              alt=""
+              aria-hidden="true"
+            />
+          </Reveal>
         </div>
 
         <ol className="process__timeline">
           {STEPS.map((step, index) => (
-            <li
+            <Reveal
+              as="li"
               className={`process__step ${
                 index % 2 === 0 ? 'process__step--left' : 'process__step--right'
               }`}
               key={step.num}
+              variant={index % 2 === 0 ? 'left' : 'right'}
+              delay={index * 70}
+              threshold={0.35}
             >
               <div className="process__card">
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
               </div>
               <span className="process__num">{step.num}</span>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </div>

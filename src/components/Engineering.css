@@ -82,6 +82,12 @@
   border-radius: 14px;
   padding: 18px 18px 20px 18px;
   box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-card.is-inview:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 52px -16px rgba(0, 0, 0, 0.55);
 }
 
 .service-card__head {

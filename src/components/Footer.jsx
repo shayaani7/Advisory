@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Reveal from './Reveal.jsx'
 import './Footer.css'
 
 const QUICK_LINKS = [
@@ -30,7 +31,7 @@ function Footer() {
   return (
     <footer className="footer" id="contact">
       <div className="container footer__inner">
-        <div className="footer__brand">
+        <Reveal className="footer__brand" variant="up">
           <a href="#home" className="footer__logo">
             <span className="footer__logo-elaf">Elaf</span>
             <span className="footer__logo-advisory">Advisory</span>
@@ -48,9 +49,9 @@ function Footer() {
             <li>+92 3452553381 (WhatsApp / Direct)</li>
             <li>Mon – Sat: 8:00 AM – 5:00 PM (PKT)</li>
           </ul>
-        </div>
+        </Reveal>
 
-        <nav className="footer__links" aria-label="Footer quick links">
+        <Reveal className="footer__links" as="nav" aria-label="Footer quick links" delay={100}>
           <h4>Quick Links</h4>
           <ul>
             {QUICK_LINKS.map((link) => (
@@ -59,9 +60,9 @@ function Footer() {
               </li>
             ))}
           </ul>
-        </nav>
+        </Reveal>
 
-        <div className="footer__newsletter">
+        <Reveal className="footer__newsletter" delay={180}>
           <h4>Executive Intelligence Briefing</h4>
           <p>
             Get the latest updates on Islamic finance regulations and fintech innovations.
@@ -103,7 +104,7 @@ function Footer() {
               <a key={link.label} href={link.href}>{link.label}</a>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
 
       <div className="footer__bottom">

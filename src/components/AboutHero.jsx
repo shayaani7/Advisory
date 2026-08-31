@@ -1,11 +1,14 @@
+import { useReady } from '../hooks/useInView'
 import blackDotBg from '../assets/blackdotbg.png'
 import bgImage from '../assets/image 93.png'
 import exploreArrow from '../assets/Polygon 2.png'
 import './AboutHero.css'
 
 function AboutHero() {
+  const ready = useReady(60)
+
   return (
-    <section className="about-hero" id="about">
+    <section className={`about-hero${ready ? ' is-inview' : ''}`} id="about">
       <div
         className="about-hero__dot-bg"
         style={{ backgroundImage: `url(${blackDotBg})` }}

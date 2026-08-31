@@ -5,6 +5,8 @@ import cryptoIcon from '../assets/virtual-coin-crypto-bitcoin-40.png'
 import abacusIcon from '../assets/accounting-abacus-26.png'
 import goldBarsIcon from '../assets/gold-bars-18.png'
 import visaIcon from '../assets/credit-card-visa-13.png'
+import Reveal from './Reveal.jsx'
+import { smoothScrollToId } from '../utils/smoothScroll.js'
 import './Engineering.css'
 
 const ICONS = {
@@ -61,7 +63,7 @@ function Engineering() {
         <div className="engineering__overlay" aria-hidden="true" />
 
         <div className="container engineering__inner">
-          <div className="engineering__head">
+          <Reveal className="engineering__head" variant="up">
             <div>
               <h2 className="engineering__heading">
                 End-to-End Islamic <br />
@@ -72,7 +74,11 @@ function Engineering() {
                 traditional and frontier financial sectors.
               </p>
             </div>
-            <a href="#contact" className="btn btn--primary engineering__cta">
+            <a
+              href="#engineering-services"
+              className="btn btn--primary engineering__cta"
+              onClick={(event) => smoothScrollToId(event, 'engineering-services')}
+            >
               Explore our services below
               <span className="btn__icon">
                 <svg viewBox="0 0 24 24" fill="none">
@@ -86,17 +92,22 @@ function Engineering() {
                 </svg>
               </span>
             </a>
-          </div>
+          </Reveal>
 
-          <div className="engineering__grid">
-            {SERVICES.map((service) => (
-              <article className="service-card" key={service.title}>
+          <div className="engineering__grid" id="engineering-services">
+            {SERVICES.map((service, index) => (
+              <Reveal
+                as="article"
+                className="service-card"
+                key={service.title}
+                delay={index * 90}
+              >
                 <div className="service-card__head">
                   <h3>{service.title}</h3>
                   <span className="service-card__icon">{ICONS[service.icon]}</span>
                 </div>
                 <p>{service.text}</p>
-              </article>
+              </Reveal>
             ))}
           </div>
         </div>

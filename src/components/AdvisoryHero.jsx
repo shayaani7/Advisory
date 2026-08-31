@@ -1,9 +1,12 @@
+import { useReady } from '../hooks/useInView'
 import heroPhoto from '../assets/advisoryservicehero.jpg'
 import exploreArrow from '../assets/Polygon 2.png'
 import noiseTexture from '../assets/Noise.png'
 import './AdvisoryHero.css'
 
 function AdvisoryHero() {
+  const ready = useReady(80)
+
   return (
     <section className="adv-hero" id="services">
       <div
@@ -49,7 +52,7 @@ function AdvisoryHero() {
           <br />
           Engineering.
         </h1>
-        <p className="adv-hero__eyebrow">
+        <p className={`adv-hero__eyebrow${ready ? ' is-inview' : ''}`}>
           Highly specialized, commercially viable structuring across traditional
           and frontier financial sectors.
         </p>

@@ -1,4 +1,5 @@
 import dpIcon from '../assets/dpsvg.png'
+import Reveal from './Reveal.jsx'
 import './AboutTestimonials.css'
 
 const TESTIMONIALS = [
@@ -41,16 +42,16 @@ function AboutTestimonials() {
   return (
     <section className="about-testimonials">
       <div className="container">
-        <div className="about-testimonials__head">
+        <Reveal className="about-testimonials__head">
           <span className="eyebrow">What Our Clients Say</span>
           <h2 className="about-testimonials__heading">
             Client <span className="about-testimonials__heading-light">Testimonials</span>
           </h2>
-        </div>
+        </Reveal>
 
         <div className="about-testimonials__grid">
-          {TESTIMONIALS.map((t) => (
-            <article className="testimonial-card" key={t.title}>
+          {TESTIMONIALS.map((t, index) => (
+            <Reveal as="article" className="testimonial-card" key={t.title} delay={index * 120}>
               <div className="testimonial-card__header">
                 <div className="testimonial-card__meta">
                   <span className="testimonial-card__rating">{t.rating}</span>
@@ -70,7 +71,7 @@ function AboutTestimonials() {
               <a href="#contact" className="testimonial-card__link">
                 Read More →
               </a>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

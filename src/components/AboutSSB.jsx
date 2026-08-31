@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import muftiImran from '../assets/mufti_imran-removebg-preview.png'
 import luqman from '../assets/luqman.jpeg'
 import halah from '../assets/halah.jpg'
+import Reveal from './Reveal.jsx'
 import './AboutSSB.css'
 
 const BOARD_MEMBERS = [
@@ -71,7 +72,7 @@ function AboutSSB() {
   return (
     <section className="about-ssb" id="ssb">
       <div className="container">
-        <div className="about-ssb__head">
+        <Reveal className="about-ssb__head">
           <h2 className="about-ssb__heading">
             The Elaf Shariah Supervisory Board{' '}
             <span className="about-ssb__heading-accent">(SSB)</span>
@@ -80,11 +81,11 @@ function AboutSSB() {
             When formal Fatwa issuance is required, we convene a full quorum of elite scholars
             and compliance architects.
           </p>
-        </div>
+        </Reveal>
 
         <div className="about-ssb__grid">
-          {BOARD_MEMBERS.map((member) => (
-            <article className="ssb-card" key={member.id}>
+          {BOARD_MEMBERS.map((member, index) => (
+            <Reveal as="article" className="ssb-card" key={member.id} delay={index * 120}>
               <div className={member.headerClass}>
                 <div className={member.wrapClass}>
                   <img
@@ -108,7 +109,7 @@ function AboutSSB() {
                   Read More →
                 </button>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -52,7 +52,7 @@ function BookingForm() {
   }
 
   return (
-    <section className="bk-form-section">
+    <section className="bk-form-section" id="get-in-touch">
       <div className="bk-form-section__purple-panel" aria-hidden="true" />
       <div className="container bk-form-section__inner">
         <div className="bk-form-col">

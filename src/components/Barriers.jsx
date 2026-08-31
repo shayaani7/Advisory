@@ -1,4 +1,5 @@
 import yellowStar from '../assets/yellow star.png'
+import Reveal from './Reveal.jsx'
 import './Barriers.css'
 
 const BARRIERS = [
@@ -39,19 +40,24 @@ const BARRIERS = [
 
 function Barriers() {
   return (
-    <section className="barriers">
+    <section className="barriers" id="barriers">
       <div className="container">
-        <h2 className="barriers__heading">
+        <Reveal as="h2" className="barriers__heading" variant="up">
           What are the{' '}
           <span className="barriers__highlight-wrap">
             <span className="highlight">Barriers?</span>
             <img className="barriers__sparkle" src={yellowStar} alt="" aria-hidden="true" />
           </span>
-        </h2>
+        </Reveal>
 
         <div className="barriers__grid">
-          {BARRIERS.map((item) => (
-            <article className="barrier-card barrier-card--frame" key={item.number}>
+          {BARRIERS.map((item, index) => (
+            <Reveal
+              as="article"
+              className="barrier-card barrier-card--frame"
+              key={item.number}
+              delay={index * 140}
+            >
               <header className="barrier-card__head">
                 <span className={`barrier-card__title ${item.number === '02.' ? 'barrier-card__title--long' : ''}`}>
                   {item.title}
@@ -61,7 +67,7 @@ function Barriers() {
               <div className="barrier-card__body">
                 <p>{item.text}</p>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

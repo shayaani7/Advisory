@@ -1,4 +1,5 @@
 import habibPic from '../assets/habibpic.png'
+import Reveal from './Reveal.jsx'
 import './AboutLeader.css'
 
 const CREDENTIALS = [
@@ -16,8 +17,7 @@ function AboutLeader() {
   return (
     <section className="about-leader">
       <div className="container about-leader__inner">
-        {/* Portrait */}
-        <div className="about-leader__portrait-col">
+        <Reveal className="about-leader__portrait-col" variant="left">
           <div className="about-leader__photo-wrap">
             <img
               src={habibPic}
@@ -30,11 +30,10 @@ function AboutLeader() {
             <h3 className="about-leader__name">Habib Ur Rahman Awan</h3>
             <p className="about-leader__title">FOUNDER & PRINCIPAL DIRECTOR/CEO</p>
           </div>
-        </div>
+        </Reveal>
 
-        {/* Bio */}
         <div className="about-leader__bio-col">
-          <div className="about-leader__bio-text">
+          <Reveal className="about-leader__bio-text" delay={80}>
             <p>
               An AAOIFI-Certified Shariah Advisor and globally recognized scholar with over 15 years
               of experience advising 200+ clients.
@@ -49,16 +48,19 @@ function AboutLeader() {
               His absolute mission is to provide clear, practical guidance that bridges the gap
               between classical theology and modern profitability.
             </p>
-          </div>
+          </Reveal>
 
           <div className="about-leader__credentials">
-            {CREDENTIALS.map((c) => (
-              <span
+            {CREDENTIALS.map((c, index) => (
+              <Reveal
+                as="span"
                 key={c.label}
+                delay={140 + index * 55}
+                variant="scale"
                 className={`about-leader__badge about-leader__badge--${c.variant}`}
               >
                 {c.label}
-              </span>
+              </Reveal>
             ))}
           </div>
         </div>
