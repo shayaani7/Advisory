@@ -149,29 +149,9 @@
   line-height: 1.75;
   color: #6a6a76;
   font-style: italic;
-  display: -webkit-box;
-  -webkit-line-clamp: 7;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
   flex: 1 1 auto;
   min-height: 0;
   margin: 0;
-}
-
-.testimonial-card__link {
-  display: inline-flex;
-  align-items: center;
-  align-self: flex-end;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--color-primary);
-  text-decoration: underline;
-  margin-top: auto;
-  transition: letter-spacing 0.2s ease;
-}
-
-.testimonial-card__link:hover {
-  letter-spacing: 0.02em;
 }
 
 @media (max-width: 900px) {

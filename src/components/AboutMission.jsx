@@ -1,14 +1,13 @@
 import islamicFinanceImg from '../assets/Rectangle 4376.png'
 import scaleIcon from '../assets/weighting_scale.png'
 import playIcon from '../assets/playicon.png'
-import asterisk from '../assets/blue star.png'
 import Reveal from './Reveal.jsx'
+import { smoothScrollToId } from '../utils/smoothScroll.js'
 import './AboutMission.css'
 
 function AboutMission() {
   return (
     <section className="about-mission" id="mission">
-      <img className="about-mission__asterisk" src={asterisk} alt="" aria-hidden="true" />
       <div className="container about-mission__inner">
         <div className="about-mission__text-col">
           <Reveal as="h2" className="about-mission__heading" variant="ink">
@@ -22,7 +21,13 @@ function AboutMission() {
             official institutional certification, we immediately convene our full Shariah
             Supervisory Board (SSB) to issue binding, globally recognised Fatwas.
           </Reveal>
-          <Reveal as="a" href="#contact" className="btn btn--primary about-mission__cta" delay={180}>
+          <Reveal
+            as="a"
+            href="#leadership"
+            className="btn btn--primary about-mission__cta"
+            delay={180}
+            onClick={(event) => smoothScrollToId(event, 'leadership')}
+          >
             Start Exploring
             <span className="btn__icon btn__icon--play">
               <img src={playIcon} alt="" />

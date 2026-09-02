@@ -5,27 +5,6 @@
   overflow: hidden;
 }
 
-.about-mission__asterisk {
-  position: absolute;
-  right: -80px;
-  top: -90px;
-  width: 280px;
-  opacity: 0.85;
-  pointer-events: none;
-  z-index: 1;
-  filter: blur(6px);
-  animation: about-mission-spin 28s linear infinite;
-}
-
-@keyframes about-mission-spin {
-  from {
-    transform: rotate(-10deg);
-  }
-  to {
-    transform: rotate(350deg);
-  }
-}
-
 .about-mission__inner {
   position: relative;
   z-index: 2;
@@ -111,12 +90,6 @@
     gap: 48px;
   }
 
-  .about-mission__asterisk {
-    right: -60px;
-    top: -40px;
-    width: 160px;
-  }
-
   .about-mission__scale-badge {
     top: -20px;
     left: -12px;
@@ -146,10 +119,5 @@
   .about-mission__heading,
   .about-mission__heading.is-inview {
     color: var(--color-heading-dark);
-  }
-
-  .about-mission__asterisk {
-    animation: none;
-    filter: blur(4px);
   }
 }

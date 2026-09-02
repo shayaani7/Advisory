@@ -2,6 +2,7 @@
   background: var(--color-surface);
   padding: 0 0 110px;
   overflow-x: clip;
+  scroll-margin-top: 24px;
 }
 
 .about-leader__inner {

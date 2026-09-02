@@ -68,9 +68,6 @@ function AboutTestimonials() {
               <h3 className="testimonial-card__title">{t.title}</h3>
               <p className="testimonial-card__author">{t.author}</p>
               <p className="testimonial-card__text">{t.text}</p>
-              <a href="#contact" className="testimonial-card__link">
-                Read More →
-              </a>
             </Reveal>
           ))}
         </div>

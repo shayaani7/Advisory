@@ -12,6 +12,7 @@ const NAV_LINKS = [
 function getActiveHref() {
   const hash = window.location.hash
   if (!hash || hash === '#' || hash === '#home') return '#home'
+  if (hash === '#mission' || hash === '#leadership' || hash === '#ssb') return '#about'
   return hash
 }
 

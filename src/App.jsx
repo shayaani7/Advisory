@@ -32,9 +32,11 @@ function HomePage() {
   )
 }
 
+const ABOUT_HASHES = new Set(['#about', '#mission', '#leadership', '#ssb'])
+
 function getPage() {
   const hash = window.location.hash
-  if (hash === '#about') return 'about'
+  if (ABOUT_HASHES.has(hash)) return 'about'
   if (hash === '#services') return 'services'
   if (hash === '#insights') return 'insights'
   if (hash === '#contact') return 'knowledge'
@@ -47,8 +49,11 @@ function App() {
 
   useEffect(() => {
     const onHashChange = () => {
-      setPage(getPage())
-      window.scrollTo(0, 0)
+      const next = getPage()
+      setPage((prev) => {
+        if (prev !== next) window.scrollTo(0, 0)
+        return next
+      })
     }
     window.addEventListener('hashchange', onHashChange)
     return () => window.removeEventListener('hashchange', onHashChange)

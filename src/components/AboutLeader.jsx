@@ -15,7 +15,7 @@ const CREDENTIALS = [
 
 function AboutLeader() {
   return (
-    <section className="about-leader">
+    <section className="about-leader" id="leadership">
       <div className="container about-leader__inner">
         <Reveal className="about-leader__portrait-col" variant="left">
           <div className="about-leader__photo-wrap">
